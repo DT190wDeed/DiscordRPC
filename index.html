@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord RPC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #202225;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 300px;
+            background-color: #2f3136;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #5865F2;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Configurer Discord RPC</h2>
+        <input type="text" id="details" placeholder="Détails du jeu">
+        <input type="text" id="state" placeholder="État du jeu">
+        <button id="startRpc">Démarrer RPC</button>
+        <button id="stopRpc">Arrêter RPC</button>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron'); // Importer ipcRenderer pour la communication
+
+        document.getElementById('startRpc').addEventListener('click', () => {
+            const details = document.getElementById('details').value;
+            const state = document.getElementById('state').value;
+            ipcRenderer.send('start-rpc', { details, state });
+        });
+
+        document.getElementById('stopRpc').addEventListener('click', () => {
+            ipcRenderer.send('stop-rpc');
+        });
+    </script>
+</body>
+</html>
