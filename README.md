@@ -45,7 +45,7 @@ Dans se rpc il est possible de changer le temps de son rpc dans rpc.js
 
 ## Screenshots
 
-![App Screenshot](https://discord.com/channels/1271864794793771018/1271865384697597953/1283143937703542867)
+![App Screenshot](https://i.imgur.com/mB4WaWb.png)
 
 
 ## 🚀 About Me
