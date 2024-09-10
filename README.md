@@ -4,26 +4,25 @@
 
 ## Install 
  
-```bash
+```
 npm install
 ```
-```bash
+```
 npm init -y
 ```
-```bash
+```
 npm install electron --save-dev
 npm install electron-packager --save-dev
 ```
-```bash
+```
 npm install discord-rpc
 ```
-```bash
+```
 Build Exe : npx electron-packager . namechoose --platform=win32 --arch=x64 --out=dist/ --overwrite
 ```
 
 - Launch no Exe
-- 
-```bash
+```
 npm start
 ```
 
