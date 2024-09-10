@@ -14,7 +14,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            overflow: hidden; /* Empêche le défilement si nécessaire */
+            overflow: hidden; 
         }
         .container {
             width: 100%;
@@ -34,7 +34,7 @@
             margin: 0;
             color: #EAEAEA;
             font-size: 1.75rem;
-            font-weight: 600; /* Semi-gras pour le titre */
+            font-weight: 600; 
         }
         input {
             width: 100%;
@@ -44,7 +44,7 @@
             background-color: #40444B;
             color: #DCDDDE;
             font-size: 1rem;
-            font-weight: 600; /* Semi-gras pour le texte d'entrée */
+            font-weight: 600; 
             box-sizing: border-box;
             transition: box-shadow 0.3s;
         }
@@ -62,11 +62,11 @@
             color: #FFFFFF;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            font-weight: 600; /* Semi-gras pour le texte des boutons */
+            font-weight: 600; 
         }
         .btn-primary {
             background-color: #5865F2;
-            margin-bottom: 8px; /* Espacement entre les boutons */
+            margin-bottom: 8px;
         }
         .btn-primary:hover {
             background-color: #4752C4;
@@ -79,7 +79,6 @@
             background-color: #C13535;
             transform: scale(1.05);
         }
-        /* Effet de flood */
         .flood-effect::before {
             content: "";
             position: absolute;
@@ -110,7 +109,7 @@
     </div>
 
     <script>
-        const { ipcRenderer } = require('electron'); // Importer ipcRenderer pour la communication
+        const { ipcRenderer } = require('electron'); 
 
         document.getElementById('startRpc').addEventListener('click', () => {
             const details = document.getElementById('details').value;
@@ -122,7 +121,6 @@
             ipcRenderer.send('stop-rpc');
         });
 
-        // Ajout d'un effet de flood à chaque mouvement de la souris
         document.addEventListener('mousemove', () => {
             document.querySelector('.flood-effect').classList.add('flood-effect');
             clearTimeout(window.floodTimeout);
